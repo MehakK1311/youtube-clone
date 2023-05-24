@@ -1,13 +1,24 @@
 import { abbreviateNumber } from "js-abbreviation-number";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { BsFillCheckCircleFill } from "react-icons/bs";
-
-// import VideoLength from "../shared/videoLength";
+import { Context } from "../context/contextApi"
 
 
-const VideoCard = ({video}) => {
-  return (
-    <Link to={`/video/${video?.postId}`}>
+
+const VideoCard = ({ video }) => {
+    const { singleVideoId, setSingleVideoId } = useContext(Context);
+
+    const fetchSingleVideo = (id) => {
+        setSingleVideoId(id)
+        console.log(singleVideoId)
+    }
+
+    useEffect(() => {
+        fetchSingleVideo()
+      }, [video]);
+
+    return (
+        <Link to={`/video/${video?.postId}`} onClick={fetchSingleVideo(video.postId)}>
             <div className="flex flex-col mb-8">
                 <div className="relative h-48 md:h-40 md:rounded-xl overflow-hidden">
                     <img
@@ -36,7 +47,7 @@ const VideoCard = ({video}) => {
                                 video?.reaction?.count,
                                 2
                             )} reactions`}</span>
-                            
+
                         </div>
                     </div>
                 </div>
