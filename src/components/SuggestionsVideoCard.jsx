@@ -1,10 +1,18 @@
 import React from "react";
 import { abbreviateNumber } from "js-abbreviation-number";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../context/contextApi";
 
-const SuggestionsVideoCard = ({ video }) => {
+const SuggestionsVideoCard = ({ video, index }) => {
+    const { setSingleVideoId } = useContext(Context);
+
+    const getVideo = () => {
+        setSingleVideoId(index);
+    }
+
     return (
-        <Link to={`/video/${video?.postId}`}>
+        <Link to={`/video/${video?.postId}`} onClick={getVideo}>
             <div className="flex mb-3">
                 <div className="relative h-24 lg:h-20 xl:h-24 w-40 min-w-[168px] lg:w-32 lg:min-w-[128px] xl:w-40 xl:min-w-[168px] rounded-xl bg-slate-800 overflow-hidden">
                     <img
@@ -23,7 +31,7 @@ const SuggestionsVideoCard = ({ video }) => {
                         <span>{`${abbreviateNumber(
                             video?.reaction?.count,
                             2
-                        )} views`}</span>
+                        )} reactions`}</span>
                     </div>
                 </div>
             </div>

@@ -7,8 +7,9 @@ import VideoCard from "../components/VideoCard";
 const Feed = () => {
   const { loading, searchResults } = useContext(Context);
 
+
   useEffect(() => {
-    // document.getElementById("root").classList.remove("custom-h");
+    document.getElementById("root").classList.remove("custom-h");
   }, []);
 
   return (
@@ -20,7 +21,7 @@ const Feed = () => {
             searchResults.map((item, index) => {
               return (
                 // console.log(item)
-                <VideoCard key={item.postId} video={item} index={index}/>
+                <VideoCard key={item.postId} video={item} index={index} />
               );
             })}
         </div>

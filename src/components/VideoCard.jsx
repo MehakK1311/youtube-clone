@@ -1,12 +1,12 @@
 import { abbreviateNumber } from "js-abbreviation-number";
-import React, { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../context/contextApi";
 
 
 const VideoCard = ({ video, index }) => {
 
-    const { singleVideoId, setSingleVideoId } = useContext(Context);
+    const { setSingleVideoId } = useContext(Context);
 
 
     const getVideo = () => {

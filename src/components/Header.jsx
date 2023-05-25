@@ -12,20 +12,16 @@ import Loader from "../shared/Loader";
 
 const Header = () => {
 
-  const [searchQuery, setSearchQuery] = useState("")
+  
   const { loading, mobileMenu, setMobileMenu } = useContext(Context);
 
 
   const navigate = useNavigate();
 
-  const searchQueryHandler = (event) => {
-    if ((event?.key === "Enter" || event === "searchButton") && searchQuery?.length > 0) {
-      navigate(`/searchResult`);
-    }
-  }
 
   const mobileMenuToggle = () => {
     setMobileMenu(!mobileMenu);
+    // console.log(mobileMenu)
   }
 
   const { pathname } = useLocation();
@@ -68,15 +64,12 @@ const Header = () => {
           <input
             type="text"
             className="bg-transparent outline-none text-white pr-5 pl-5 md:pl-0 w-44 md:group-focus-within:pl-0 md:w-64 lg:w-[500px]"
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onKeyUp={searchQueryHandler}
             placeholder="Search"
-            value={searchQuery}
           />
         </div>
         <button
           className="w-[40px] md:w-[60px] h-8 md:h-10 flex items-center justify-center border border-l-0 border-[#303030] rounded-r-3xl bg-white/[0.1]"
-          onClick={() => searchQueryHandler("searchButton")}
+          
         >
           <IoIosSearch className="text-white xltext-white" />
         </button>
