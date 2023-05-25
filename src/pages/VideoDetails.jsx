@@ -37,7 +37,7 @@ const VideoDetails = () => {
                             width="100%"
                             height="100%"
                             style={{ backgroundColor: "#000000" }}
-                            playing={true}>
+                            >
                             <source src={video?.submission?.mediaUrl} type="video/mp4"/>
                         </video>
                             </div>
