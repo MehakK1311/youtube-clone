@@ -8,7 +8,7 @@ export const AppContext = (props) => {
   const [searchResults, setSearchResults] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("New");
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [singleVideoId, setSingleVideoId] = useState("");
+  const [singleVideoId, setSingleVideoId] = useState();
 
   useEffect(() => {
     fetchSelectedCategoryData(selectedCategory);
