@@ -5,7 +5,7 @@ import LeftNav from "../components/LeftNav";
 import VideoCard from "../components/VideoCard";
 
 const Feed = () => {
-  const { loading, searchResults } = useContext(Context);
+  const { loading } = useContext(Context);
 
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,7 +19,7 @@ const Feed = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(`https://internship-service.onrender.com/videos?page=${currentPage}`);
-      const { data,} = await response.json();
+      const { data} = await response.json();
       setData(data.posts);
       // console.log(data);
       setTotalPages(4);

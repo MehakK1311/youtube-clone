@@ -1,5 +1,5 @@
-import { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Context } from "../context/contextApi";
 import ytLogo from "../assets/yt-logo.png";
 import ytLogoMobile from "../assets/yt-logo-mobile.png";
@@ -14,9 +14,6 @@ const Header = () => {
 
   
   const { loading, mobileMenu, setMobileMenu } = useContext(Context);
-
-
-  const navigate = useNavigate();
 
 
   const mobileMenuToggle = () => {
@@ -84,7 +81,7 @@ const Header = () => {
           </div>
         </div>
         <div className="flex h-8 w-8 overflow-hidden rounded-full md:ml-4">
-          <img src="https://xsgames.co/randomusers/assets/avatars/female/67.jpg" />
+          <img src="https://xsgames.co/randomusers/assets/avatars/female/67.jpg"  alt="profile"/>
         </div>
       </div>
     </div>

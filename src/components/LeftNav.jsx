@@ -62,5 +62,4 @@ const LeftNav = () => {
         </div>
     );
 };
-
 export default LeftNav;

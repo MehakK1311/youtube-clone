@@ -10,7 +10,7 @@ const SuggestionsVideoCard = ({ video, index }) => {
     const getVideo = () => {
         setSingleVideoId(index);
     }
-
+    
     return (
         <Link to={`/video/${video?.postId}`} onClick={getVideo}>
             <div className="flex mb-3">
@@ -18,6 +18,7 @@ const SuggestionsVideoCard = ({ video, index }) => {
                     <img
                         className="h-full w-full object-cover"
                         src={video?.submission?.thumbnail}
+                        alt="thumbnail"
                     />
                 </div>
                 <div className="flex flex-col ml-3 overflow-hidden">

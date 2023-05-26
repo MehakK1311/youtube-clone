@@ -29,6 +29,7 @@ export const AppContext = (props) => {
         loading,
         setLoading,
         searchResults,
+        setSearchResults,
         selectedCategory,
         setSelectedCategory,
         mobileMenu,

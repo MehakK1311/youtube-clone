@@ -22,6 +22,7 @@ const VideoCard = ({ video, index }) => {
                     <img
                         className="h-full w-full object-cover"
                         src={video?.submission?.thumbnail}
+                        alt="thumbnail"
                     />
                 </div>
                 <div className="flex text-white mt-3">
@@ -30,6 +31,7 @@ const VideoCard = ({ video, index }) => {
                             <img
                                 className="h-full w-full object-cover"
                                 src={video?.creator?.pic}
+                                alt="creator profile"
                             />
                         </div>
                     </div>
